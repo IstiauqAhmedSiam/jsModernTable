@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Table Library Demo</title>
+    <link rel="stylesheet" href="../src/modern-table.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #111827;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Modern Table Demo</h1>
+
+    <div id="user-table">
+
+    </div>
+
+    <script src="../src/modern-table.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const users = [
+            { id: 1, name: "Gretchen Kenter", email: "gkenter@gmail.com", role: "Designer", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 2, name: "Wilson Bothman", email: "wbothman@gmail.com", role: "Developer", status: "Active", country: "San Jose, USA" },
+            { id: 3, name: "Marilyn Bergson", email: "mbergson@gmail.com", role: "Manager", status: "Inactive", country: "Berlin, Germany" },
+            { id: 4, name: "Alfonso Mango", email: "amango@gmail.com", role: "Developer", status: "Active", country: "San Jose, USA" },
+            { id: 5, name: "Talan Gouse", email: "tgouse@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 6, name: "Corey Carder", email: "ccarder@gmail.com", role: "Security", status: "Pending", country: "San Jose, USA" },
+            { id: 7, name: "Justin Dias", email: "jdias@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 8, name: "Zaire Saris", email: "zsaris@gmail.com", role: "Manager", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 9, name: "Gustavo Carder", email: "gcarder@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 10, name: "Kierra Gouse", email: "kgouse@gmail.com", role: "Marketing", status: "Inactive", country: "London, UK" },
+            { id: 11, name: "Livia Bator", email: "lbator@gmail.com", role: "Developer", status: "Active", country: "Paris, France" },
+            { id: 12, name: "Jocelyn Septimus", email: "jseptimus@gmail.com", role: "Security", status: "Active", country: "Toronto, Canada" },
+            { id: 13, name: "Brandon Dokidis", email: "bdokidis@gmail.com", role: "Designer", status: "Pending", country: "New York, USA" },
+            { id: 14, name: "Helena Hills", email: "hhills@gmail.com", role: "Developer", status: "Active", country: "London, UK" },
+            { id: 15, name: "Dario Gouse", email: "dgouse@gmail.com", role: "Marketing", status: "Active", country: "Paris, France" },
+            { id: 16, name: "Lucas Vance", email: "lvance@gmail.com", role: "Developer", status: "Active", country: "Berlin, Germany" },
+            { id: 17, name: "Sophie Turner", email: "sturner@gmail.com", role: "Designer", status: "Active", country: "London, UK" },
+            { id: 18, name: "Adam Smith", email: "asmith@gmail.com", role: "Security", status: "Active", country: "New York, USA" },
+            { id: 19, name: "Eve Online", email: "eonline@gmail.com", role: "Marketing", status: "Inactive", country: "Tbilisi, Georgia" },
+            { id: 20, name: "John Doe", email: "jdoe@gmail.com", role: "Developer", status: "Active", country: "Paris, France" },
+            { id: 21, name: "Jane Smith", email: "jsmith@gmail.com", role: "Designer", status: "Active", country: "London, UK" },
+            { id: 22, name: "Bob Harris", email: "bharris@gmail.com", role: "Manager", status: "Active", country: "New York, USA" },
+            { id: 23, name: "Alice Blue", email: "ablue@gmail.com", role: "Developer", status: "Pending", country: "Berlin, Germany" },
+            { id: 24, name: "Charlie Brown", email: "cbrown@gmail.com", role: "Marketing", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 25, name: "David Black", email: "dblack@gmail.com", role: "Security", status: "Active", country: "San Jose, USA" },
+            { id: 26, name: "Fiona Rose", email: "frose@gmail.com", role: "Designer", status: "Active", country: "Paris, France" },
+            { id: 27, name: "George Green", email: "ggreen@gmail.com", role: "Manager", status: "Inactive", country: "London, UK" },
+            { id: 28, name: "Hannah White", email: "hwhite@gmail.com", role: "Developer", status: "Active", country: "Berlin, Germany" },
+            { id: 29, name: "Ian Gray", email: "igray@gmail.com", role: "Marketing", status: "Active", country: "New York, USA" },
+            { id: 30, name: "Jack Silver", email: "jsilver@gmail.com", role: "Security", status: "Active", country: "San Jose, USA" },
+            { id: 1, name: "Gretchen Kenter", email: "gkenter@gmail.com", role: "Designer", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 2, name: "Wilson Bothman", email: "wbothman@gmail.com", role: "Developer", status: "Active", country: "San Jose, USA" },
+            { id: 3, name: "Marilyn Bergson", email: "mbergson@gmail.com", role: "Manager", status: "Inactive", country: "Berlin, Germany" },
+            { id: 4, name: "Alfonso Mango", email: "amango@gmail.com", role: "Developer", status: "Active", country: "San Jose, USA" },
+            { id: 5, name: "Talan Gouse", email: "tgouse@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 6, name: "Corey Carder", email: "ccarder@gmail.com", role: "Security", status: "Pending", country: "San Jose, USA" },
+            { id: 7, name: "Justin Dias", email: "jdias@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 8, name: "Zaire Saris", email: "zsaris@gmail.com", role: "Manager", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 9, name: "Gustavo Carder", email: "gcarder@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 10, name: "Kierra Gouse", email: "kgouse@gmail.com", role: "Marketing", status: "Inactive", country: "London, UK" },
+            { id: 11, name: "Livia Bator", email: "lbator@gmail.com", role: "Developer", status: "Active", country: "Paris, France" },
+            { id: 12, name: "Jocelyn Septimus", email: "jseptimus@gmail.com", role: "Security", status: "Active", country: "Toronto, Canada" },
+            { id: 13, name: "Brandon Dokidis", email: "bdokidis@gmail.com", role: "Designer", status: "Pending", country: "New York, USA" },
+            { id: 14, name: "Helena Hills", email: "hhills@gmail.com", role: "Developer", status: "Active", country: "London, UK" },
+            { id: 15, name: "Dario Gouse", email: "dgouse@gmail.com", role: "Marketing", status: "Active", country: "Paris, France" },
+            { id: 16, name: "Lucas Vance", email: "lvance@gmail.com", role: "Developer", status: "Active", country: "Berlin, Germany" },
+            { id: 17, name: "Sophie Turner", email: "sturner@gmail.com", role: "Designer", status: "Active", country: "London, UK" },
+            { id: 18, name: "Adam Smith", email: "asmith@gmail.com", role: "Security", status: "Active", country: "New York, USA" },
+            { id: 19, name: "Eve Online", email: "eonline@gmail.com", role: "Marketing", status: "Inactive", country: "Tbilisi, Georgia" },
+            { id: 20, name: "John Doe", email: "jdoe@gmail.com", role: "Developer", status: "Active", country: "Paris, France" },
+            { id: 21, name: "Jane Smith", email: "jsmith@gmail.com", role: "Designer", status: "Active", country: "London, UK" },
+            { id: 22, name: "Bob Harris", email: "bharris@gmail.com", role: "Manager", status: "Active", country: "New York, USA" },
+            { id: 23, name: "Alice Blue", email: "ablue@gmail.com", role: "Developer", status: "Pending", country: "Berlin, Germany" },
+            { id: 24, name: "Charlie Brown", email: "cbrown@gmail.com", role: "Marketing", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 25, name: "David Black", email: "dblack@gmail.com", role: "Security", status: "Active", country: "San Jose, USA" },
+            { id: 26, name: "Fiona Rose", email: "frose@gmail.com", role: "Designer", status: "Active", country: "Paris, France" },
+            { id: 27, name: "George Green", email: "ggreen@gmail.com", role: "Manager", status: "Inactive", country: "London, UK" },
+            { id: 28, name: "Hannah White", email: "hwhite@gmail.com", role: "Developer", status: "Active", country: "Berlin, Germany" },
+            { id: 29, name: "Ian Gray", email: "igray@gmail.com", role: "Marketing", status: "Active", country: "New York, USA" },
+            { id: 30, name: "Jack Silver", email: "jsilver@gmail.com", role: "Security", status: "Active", country: "San Jose, USA" },
+            { id: 1, name: "Gretchen Kenter", email: "gkenter@gmail.com", role: "Designer", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 2, name: "Wilson Bothman", email: "wbothman@gmail.com", role: "Developer", status: "Active", country: "San Jose, USA" },
+            { id: 3, name: "Marilyn Bergson", email: "mbergson@gmail.com", role: "Manager", status: "Inactive", country: "Berlin, Germany" },
+            { id: 4, name: "Alfonso Mango", email: "amango@gmail.com", role: "Developer", status: "Active", country: "San Jose, USA" },
+            { id: 5, name: "Talan Gouse", email: "tgouse@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 6, name: "Corey Carder", email: "ccarder@gmail.com", role: "Security", status: "Pending", country: "San Jose, USA" },
+            { id: 7, name: "Justin Dias", email: "jdias@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 8, name: "Zaire Saris", email: "zsaris@gmail.com", role: "Manager", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 9, name: "Gustavo Carder", email: "gcarder@gmail.com", role: "Designer", status: "Active", country: "New York, USA" },
+            { id: 10, name: "Kierra Gouse", email: "kgouse@gmail.com", role: "Marketing", status: "Inactive", country: "London, UK" },
+            { id: 11, name: "Livia Bator", email: "lbator@gmail.com", role: "Developer", status: "Active", country: "Paris, France" },
+            { id: 12, name: "Jocelyn Septimus", email: "jseptimus@gmail.com", role: "Security", status: "Active", country: "Toronto, Canada" },
+            { id: 13, name: "Brandon Dokidis", email: "bdokidis@gmail.com", role: "Designer", status: "Pending", country: "New York, USA" },
+            { id: 14, name: "Helena Hills", email: "hhills@gmail.com", role: "Developer", status: "Active", country: "London, UK" },
+            { id: 15, name: "Dario Gouse", email: "dgouse@gmail.com", role: "Marketing", status: "Active", country: "Paris, France" },
+            { id: 16, name: "Lucas Vance", email: "lvance@gmail.com", role: "Developer", status: "Active", country: "Berlin, Germany" },
+            { id: 17, name: "Sophie Turner", email: "sturner@gmail.com", role: "Designer", status: "Active", country: "London, UK" },
+            { id: 18, name: "Adam Smith", email: "asmith@gmail.com", role: "Security", status: "Active", country: "New York, USA" },
+            { id: 19, name: "Eve Online", email: "eonline@gmail.com", role: "Marketing", status: "Inactive", country: "Tbilisi, Georgia" },
+            { id: 20, name: "John Doe", email: "jdoe@gmail.com", role: "Developer", status: "Active", country: "Paris, France" },
+            { id: 21, name: "Jane Smith", email: "jsmith@gmail.com", role: "Designer", status: "Active", country: "London, UK" },
+            { id: 22, name: "Bob Harris", email: "bharris@gmail.com", role: "Manager", status: "Active", country: "New York, USA" },
+            { id: 23, name: "Alice Blue", email: "ablue@gmail.com", role: "Developer", status: "Pending", country: "Berlin, Germany" },
+            { id: 24, name: "Charlie Brown", email: "cbrown@gmail.com", role: "Marketing", status: "Active", country: "Tbilisi, Georgia" },
+            { id: 25, name: "David Black", email: "dblack@gmail.com", role: "Security", status: "Active", country: "San Jose, USA" },
+            { id: 26, name: "Fiona Rose", email: "frose@gmail.com", role: "Designer", status: "Active", country: "Paris, France" },
+            { id: 27, name: "George Green", email: "ggreen@gmail.com", role: "Manager", status: "Inactive", country: "London, UK" },
+            { id: 28, name: "Hannah White", email: "hwhite@gmail.com", role: "Developer", status: "Active", country: "Berlin, Germany" },
+            { id: 29, name: "Ian Gray", email: "igray@gmail.com", role: "Marketing", status: "Active", country: "New York, USA" },
+            { id: 30, name: "Jack Silver", email: "jsilver@gmail.com", role: "Security", status: "Active", country: "San Jose, USA" }
+        ];
+
+        // Render Data
+        table.setData(users);
+    </script>
+</body>
+
+</html>
