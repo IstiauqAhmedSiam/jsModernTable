@@ -2,6 +2,8 @@
 
 A lightweight, dependency-free, and highly customizable JavaScript table library for building modern data grids with ease.
 
+[**Live Demo**](https://istiauqahmedsiam.github.io/jsModernTable/demo)
+
 ![Modern Table Preview](assets/preview.png)
 
 ## Features
